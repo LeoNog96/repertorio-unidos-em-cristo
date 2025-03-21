@@ -1,132 +1,352 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
+
 <head>
-<meta charset="utf-8"/>
-<title>Repertório Completo - Ministério de Música</title>
+  <meta charset="utf-8" />
+  <title>Repertórios</title>
 
-<style>
-  body { font-family: sans-serif; margin: 2rem; line-height: 1.6; }
-  h1, h2, h3 { margin-top: 2rem; }
-  .sumario a { display: block; margin: 0.25rem 0; }
-  .musica {
-    margin-top: 1.5rem;
-    border-top: 1px solid #ccc;
-    padding-top: 1rem;
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-  .letra-container {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    -webkit-column-gap: 2rem;
-    -moz-column-gap: 2rem;
-    column-gap: 2rem;
-  }
-  .letra {
-    white-space: pre-wrap;
-    font-family: monospace;
-    font-size: 1rem;
-  }
-  .voltar {
-    margin-top: 1.5rem;
-    display: inline-block;
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: white;
-    background-color: #007BFF;
-    border-radius: 6px;
-  }
-  .voltar:hover {
-    background-color: #0056b3;
-  }
-  .exportar {
-    margin: 1rem 0;
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    border-radius: 6px;
-  }
-  .exportar:hover {
-    background: #0056b3;
-  }
-
-  @media screen and (max-width: 768px) {
-    body { margin: 1rem; }
-    .letra-container { column-count: 1; }
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.2rem; }
-    h3 { font-size: 1.1rem; }
-  }
-
-  @media print {
-    .exportar { display: none !important; }
-    .letra-container {
-      column-count: 2 !important;
-      column-gap: 2rem !important;
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+      line-height: 1.6;
     }
-  }
-</style>
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 2rem;
+    }
+
+    .sumario a {
+      display: block;
+      margin: 0.25rem 0;
+    }
+
+    .musica {
+      margin-top: 1.5rem;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .letra-container {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+      -webkit-column-gap: 2rem;
+      -moz-column-gap: 2rem;
+      column-gap: 2rem;
+    }
+
+    .letra {
+      white-space: pre-wrap;
+      font-family: monospace;
+      font-size: 1rem;
+    }
+
+    .voltar {
+      margin-top: 1.5rem;
+      display: inline-block;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      color: white;
+      background-color: #007BFF;
+      border-radius: 6px;
+    }
+
+    .voltar:hover {
+      background-color: #0056b3;
+    }
+
+    .exportar {
+      margin: 1rem 0;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      border-radius: 6px;
+    }
+
+    .exportar:hover {
+      background: #0056b3;
+    }
+
+    @media screen and (max-width: 768px) {
+      body {
+        margin: 1rem;
+      }
+
+      .letra-container {
+        column-count: 1;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media print {
+      .exportar {
+        display: none !important;
+      }
+
+      .letra-container {
+        column-count: 2 !important;
+        column-gap: 2rem !important;
+      }
+
+    img {
+      max-width: 140px !important;
+    }
+    }
+  </style>
 
 </head>
+
 <body>
-<h1>Repertório Completo - Ministério de Música</h1>
-<a class="exportar" href="/exportar-pdf" target="_blank">📄 Exportar PDF</a>
-<div class="sumario" id="sumario">
-<h2>Sumário</h2>
-<strong>Animação</strong><ul><li><a href="#reunidos-aqui">Reunidos Aqui</a></li><li><a href="#o-senhor-e-rei">O Senhor é Rei</a></li></ul><strong>Espírito Santo</strong><ul><li><a href="#vem-espirito-santo">Vem Espírito Santo</a></li></ul><strong>Perdão</strong><ul><li><a href="#perdao-senhor">Perdão Senhor</a></li></ul><strong>Maria</strong><ul><li><a href="#maria-de-nazare">Maria de Nazaré</a></li></ul><strong>Pós pregação</strong><ul><li><a href="#te-louvarei">Te Louvarei</a></li></ul><strong>Adoração</strong><ul><li><a href="#aclame-ao-senhor">Aclame ao Senhor</a></li></ul></div><h2>Animação</h2>
-<div class="musica" id="reunidos-aqui">
-<h3>Reunidos Aqui</h3>
-<p><strong>Tom:</strong> C</p>
-<div class="letra">
-Letra da música Reunidos Aqui aqui...
+  <div style="position: absolute; top: 20px; right: 20px;">
+    <img src="logo-unidos-em-cristo.png" alt="Logo Unidos em Cristo"
+         style="max-width: 140px;" />
   </div>
-<a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
-</div>
-<div class="musica" id="o-senhor-e-rei">
-<h3>O Senhor é Rei</h3>
-<p><strong>Tom:</strong> C</p>
-<div class="letra">
-Letra da música O Senhor é Rei aqui...
+  
+  <h1>REPERTÓRIO - MINISTÉRIO DE MÚSICA UNIDOS EM CRISTO</h1>
+  <a class="exportar" href="/exportar-pdf" target="_blank">📄 Exportar PDF</a>
+  <div class="sumario" id="sumario">
+    <h2>Sumário</h2>
+    <strong>Adoração</strong>
+    <ul>
+      <li><a href="#sublime-sacramento">Tão Sublime Sacramento</a></li>
+    </ul>
+    <strong>Animação</strong>
+    <ul>
+      <li><a href="#o-senhor-e-rei">O Senhor é Rei</a></li>
+    </ul>
+    <strong>Cura</strong>
+    <ul>
+      <li><a href="#cura-senhor">Cura, Senhor</a></li>
+    </ul>
+    <strong>Espírito Santo</strong>
+    <ul>
+      <li><a href="#vem-espirito-santo">Vem Espírito Santo</a></li>
+    </ul>
+    <strong>Maria</strong>
+    <ul>
+      <li><a href="#maria-de-nazare">Maria de Nazaré</a></li>
+    </ul>
+    <strong>Perdão</strong>
+    <ul>
+      <li><a href="#perdao-senhor">Perdão Senhor</a></li>
+    </ul>
+    <strong>Pós pregação</strong>
+    <ul>
+      <li><a href="#desperta">Desperta</a></li>
+    </ul>
   </div>
-<a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
-</div>
-<h2>Espírito Santo</h2>
-<div class="musica" id="vem-espirito-santo">
-<h3>Vem Espírito Santo</h3>
-<p><strong>Tom:</strong> C</p>
-<div class="letra">
-Letra da música Vem Espírito Santo aqui...
+  <h2>Adoração</h2>
+  <div class="musica" id="sublime-sacramento">
+    <h3>Tão Sublime Sacramento</h3>
+    <p><strong>Tom:</strong> E</p>
+    <div class="letra-container">
+      <pre class="letra">
+[Intro] E9  E
+      </pre>
+      <pre class="letra">
+[Primeira Parte]
+
+  E                
+Tão Sublime Sacramento
+C#m7  B     A    B  E
+Ado__remos neste altar
+                    
+Pois o Antigo Testamento
+  C#m7   B      A   B  E
+Deu ao novo o seu lu_gar
+      </pre>
+      <pre class="letra">
+[Refrão]
+
+B       E   B        E     
+Venha a fé, por suplemento 
+F#m7   E  A   B     E
+Os senti_dos completar
+      </pre>
+      <pre class="letra">
+[Segunda Parte]
+
+E 
+Ao eterno Pai cantemos
+  C#m7   B     A  B  E
+E a   Jesus o Salva_dor
+
+Ao Espírito exaltemos
+ C#m7   B     A  B   E
+Na Trindade eterno amor
+      </pre>
+      <pre class="letra">
+[Refrão]
+
+B       E   B        E    
+Ao Deus Uno e Trino demos
+F#m7   E  A  B     E
+A alegri__a do louvor
+B  E   B  E
+A_mém, a_mém
+      </pre>
+    </div>
+    <a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
   </div>
-<a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
-</div>
-<h2>Perdão</h2>
-<div class="musica" id="perdao-senhor">
-<h3>Perdão Senhor</h3>
-<p><strong>Tom:</strong> C</p>
-<div class="letra">
-Letra da música Perdão Senhor aqui...
+  <h2>Animação</h2>
+  <div class="musica" id="o-senhor-e-rei">
+    <h3>O Senhor é Rei</h3>
+    <p><strong>Tom:</strong> Em</p>
+    <div class="letra-container">
+      <pre class="letra">
+[Intro] 
+Em  D/E  C/E  D/E  C/E
+Em  D/E  C/E  D/E  C/E
+Em  C/E  Am  B7(4)  B7
+    </pre>
+      <pre class="letra">
+[Primeira Parte]
+
+Em           D/F#  G
+O Senhor é Rei
+                      G/B  D  D#º
+O Senhor é meu pastor e   rei
+Em           D/F#  G
+O Senhor é Rei
+                      G/B  D  B7(4)  B7
+O Senhor é meu pastor e   rei
+Em                D/F#  G
+O Senhor está no céu 
+</pre>
+<pre class="letra">
+G
+O Senhor está no mar
+D          C     B7   Em  ( C/E  D/E )
+  Na extensão do infinito
+Em                      D/F#  G
+   O Senhor está no céu 
+
+O Senhor está no mar
+D          C     B7   Em  C/E  D/E  C/E
+  Na extensão do infinito
+</pre>
+
+<pre class="letra">
+  [Refrão]
+
+G          Em  D          Bm7
+Está no céu,   está no mar
+Em          C          D  D4  D
+Na extensão do infinito
+G          Em  D          Bm7
+Está no céu,   está no mar
+Em          C          D   D4  D
+Na extensão do infinito
+</pre>
+    </div>
+    <a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
   </div>
-<a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
-</div>
-<h2>Maria</h2>
-<div class="musica" id="maria-de-nazare">
-<h3>Maria de Nazaré</h3>
-<p><strong>Tom:</strong>E</p>
-<div class="letra-container"><pre class="letra">[Intro]
+  <h2>Cura</h2>
+  <div class="musica" id="cura-senhor">
+    <h3>Cura, Senhor</h3>
+    <p><strong>Tom:</strong> E</p>
+    <div class="letra-container">
+      <pre class="letra">
+E               B            C#m
+Vamos Jesus passear, na minha vida
+A                  B                    E E7
+Quero voltar aos lugares em que fiquei só
+A                  B     G#m                 C#m
+Quero voltar lá contigo, vendo que estavas comigo
+F#m               B             E  E7
+Quero sentir teu amor, a me embalar
+      </pre>
+<pre class="letra">
+[Refrão]
+
+A                  B
+Cura Senhor, onde dói
+G#m               C#m
+Cura Senhor, bem aqui
+A                 B            E E7
+Cura Senhor, onde eu não posso ir
+A                  B
+Cura Senhor, onde dói
+G#m               C#m
+Cura Senhor, bem aqui
+A                 B            E
+Cura Senhor, onde eu não posso ir
+</pre>
+<pre class="letra">
+  E                    B          C#m
+Quando a lembrança me faz, adormecer
+A                      B                E E7
+Sabes que a espada da dor entra em meu ser
+A                    B     G#m                C#m
+Tu me carregas nos braços, leva-me com teu abraço
+F#m                  B             E E7
+Sinto minha alma chorar, junto de Ti
+</pre>
+<pre class="letra">
+[Refrão]
+</pre>
+<pre class="letra">
+ E                     B          C#m
+ Tantas lembranças eu quero, esquecer
+ A                      B                E E7
+ Deixa um vazio em minha'lma e em meu viver
+ A                  B    G#m                  C#m
+ Toma Senhor meu espaço, te entrego todo o cansaço
+ F#m                    B            E E7
+ Quero acordar com tua paz a me aquecer
+</pre>
+<pre class="letra">
+[Refrão]
+</pre>
+    </div>
+    <a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
+  </div>
+  <h2>Espírito Santo</h2>
+  <div class="musica" id="vem-espirito-santo">
+    <h3>Vem Espírito Santo</h3>
+    <p><strong>Tom:</strong> C</p>
+    <div class="letra">
+      Letra da música Vem Espírito Santo aqui...
+    </div>
+    <a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
+  </div>
+  <h2>Maria</h2>
+  <div class="musica" id="maria-de-nazare">
+    <h3>Maria de Nazaré</h3>
+    <p><strong>Tom:</strong>E</p>
+    <div class="letra-container">
+      <pre class="letra">[Intro]
 ( E  F#m7  B7  E )
-( F#m7  B7  E  B7 )</pre><pre class="letra">[Primeira Parte]
+( F#m7  B7  E  B7 )</pre>
+      <pre class="letra">[Primeira Parte]
              F#m7  B7         E
 Maria de Nazaré, Maria me cativou
                         F#m7
 Fez mais forte a minha fé
    B7              E
-E por filho me adotou</pre><pre class="letra">[Refrão 1]
+E por filho me adotou</pre>
+      <pre class="letra">[Refrão 1]
     Bm7      E      A
 Às vezes eu paro e fico a pensar
    Am              E
@@ -143,8 +363,10 @@ Pra mãe de Jesus, o filho de Deus
    C#m              F#m7
 Maria que o povo inteiro elegeu
     B7            E  B7
-Senhora e mãe do céu</pre><pre class="letra">( E  F#m7  B7  E )
-( F#m7  B7  E  B7 )</pre><pre class="letra">[Segunda Parte]
+Senhora e mãe do céu</pre>
+      <pre class="letra">( E  F#m7  B7  E )
+( F#m7  B7  E  B7 )</pre>
+      <pre class="letra">[Segunda Parte]
    E                F#m7
 Maria que eu quero bem
    B7           E
@@ -152,7 +374,8 @@ Maria do puro amor
                    F#m7
 Igual a você, ninguém
      B7             E
-Mãe pura do meu Senhor</pre><pre class="letra">[Refrão 2]
+Mãe pura do meu Senhor</pre>
+      <pre class="letra">[Refrão 2]
     Bm7     E         A
 Em cada mulher que a terra criou
      Am             E
@@ -169,25 +392,127 @@ Maria que fez Jesus caminhar
    C#m          F#m7
 Maria que só viveu pra seu Deus
    B7          E  B7
-Maria do povo meu</pre></div>
-<a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
-</div>
-<h2>Pós pregação</h2>
-<div class="musica" id="te-louvarei">
-<h3>Te Louvarei</h3>
-<p><strong>Tom:</strong> C</p>
-<div class="letra">
-Letra da música Te Louvarei aqui...
+Maria do povo meu</pre>
+    </div>
+    <a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
   </div>
-<a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
-</div>
-<h2>Adoração</h2>
-<div class="musica" id="aclame-ao-senhor">
-<h3>Aclame ao Senhor</h3>
-<p><strong>Tom:</strong> C</p>
-<div class="letra">
-Letra da música Aclame ao Senhor aqui...
+  <h2>Perdão</h2>
+  <div class="musica" id="perdao-senhor">
+    <h3>Perdão Senhor</h3>
+    <p><strong>Tom:</strong> C</p>
+    <div class="letra-container">
+      <pre class="letra">
+C7+             Am7   Dm7 G7  C
+Perdão, Senhor,    tantos erros co  me ti
+          Em7           F       G7    C    C7
+Perdão, Senhor tantas  vezes me omi--ti
+            F         G/F        Em7
+Perdão Senhor pelos males que causei  pelas
+  Am7        Dm7         G7            Gm7  C7
+Coisas que falei, pelo irmão que eu julguei
+          F         G/F        Em7         
+Perdão Senhor pelos males que causei
+          Am7       Dm7         G7
+Pelas coisas que falei, pelo irmão
+            C    Bb/D C/E
+Que eu julguei
+  </pre>
+      <pre class="letra">
+    F        G7        Em7       Am7        Dm7        G7
+Piedade, Senhor, tem piedade, Senhor, meu pecado vem lavar
+          Gm7  C7
+Com teu amor
+    F        G7        Em7       Am7
+Piedade, Senhor, tem piedade, Senhor
+    Dm7            G7            C9
+E liberta a minha alma para o amor
+</pre>
+      <pre class="letra">
+( C9  Am7  Dm7  F/G  G/F  Em7  Am7  Dm7  G7 )
+</pre>
+      <pre class="letra">
+              C7+         Am7    Dm7 G7  C
+Perdão, Senhor, por que sou tão pe ca dor
+        Em7           F       G7    C    C7
+Perdão Senhor, sou Pequeno e sem valor
+          F         G/F        Em7
+Mas mesmo assim, tu me amas quero Então
+        Am7        Dm7         G7            Gm7  C7
+Te entregar meu coração, suplicar o teu perdão
+            F         G/F        Em7
+Mas  mesmo assim, tu me amas quero então
+      Am7        Dm7         G7            Gm7  C7 
+Te entregar meu Coração, suplicar o teu perdão
+  </pre>
+    </div>
+    <a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
   </div>
-<a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
-</div>
-</body></html>
+
+  <h2>Pós pregação</h2>
+  <div class="musica" id="desperta">
+    <h3>Desperta</h3>
+    <p><strong>Tom:</strong> C</p>
+    <div class="letra-container">
+      <pre class="letra">
+[Intro] C9  G4  Am7  F9
+      </pre>
+      <pre class="letra">
+[Primeira Parte]
+
+C9     G4              Am7         F9
+Aviva o meu coração cansado de esperar
+                    C9   G4(riff)        Am7    F9
+Religa Tua vida em mim,      Tua vida em mim
+    C9     G4               Am7    F9
+Desperta tu que dormes na escuridão
+                  C9           G4(riff)  Am7  F9
+Vem ouvir as trombetas de Sião
+      </pre>
+      <pre class="letra">
+[Refrão]
+
+    Am7(9)  G4                     F9
+Proclama         que Jesus voltando está
+                    Am7(9)     G4
+Que o Seu Reino não findará
+                    F9
+Que o cordeiro é o Leão que no trono está (2x)
+      </pre>
+      <pre class="letra">
+[Segunda Parte]
+
+Am7(9)      G4                         F9
+Escuta povo meu , Sou a promessa das nações, Vou levantar você
+                Am7(9)                G4
+Para ser a minha voz e ser as minhas mãos
+                  F9
+E hoje nessa geração te escolhi és meu! (2x)
+      </pre>
+      <pre class="letra">
+[Refrão]
+
+    Am7(9)  G4                     F9
+Proclama         que Jesus voltando está
+                    Am7(9)     G4
+Que o Seu Reino não findará
+                    F9
+Que o cordeiro é o Leão que no trono está (2x)
+      </pre>
+<pre class="letra">
+[Terceira Parte]
+
+  C9        G4            Am7(9)       F9
+Vou avivar o teu coração, Cansado de esperar
+    C9              G4
+Vou te atrair, te conquistar
+               Am7(9)    F9
+Desperta é tempo de mudar
+               C9
+Desperta é tempo de mudar
+</pre>
+    </div>
+    <a class="voltar" href="#sumario">⬅️ Voltar ao Sumário</a>
+  </div>
+</body>
+
+</html>
