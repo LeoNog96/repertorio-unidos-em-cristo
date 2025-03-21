@@ -10,6 +10,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const fs = require('fs');
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'repertorio-completo.html'));
+  });
+
 app.get('/exportar-pdf', async (req, res) => {
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -17,7 +21,7 @@ app.get('/exportar-pdf', async (req, res) => {
   });
 
   const page = await browser.newPage();
-  const targetUrl = `http://localhost:${PORT}/repertorio-completo.html`;
+  const targetUrl = `https://repertorio-unidos-em-cristo.onrender.com/repertorio-completo.html`;
 
   await page.goto(targetUrl, { waitUntil: 'networkidle0' });
   await page.emulateMediaType('print');
