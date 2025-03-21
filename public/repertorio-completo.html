@@ -61,6 +61,28 @@
     .voltar:hover {
       background-color: #0056b3;
     }
+    .cabecalho-repertorio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.titulo-repertorio {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left;
+  flex: 1;
+  margin: 0;
+  color: #222;
+}
+
+.logo-repertorio {
+  max-width: 140px;
+  height: auto;
+}
 
     .exportar {
       margin: 1rem 0;
@@ -97,6 +119,16 @@
       h3 {
         font-size: 1.1rem;
       }
+      .cabecalho-repertorio {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .titulo-repertorio {
+    font-size: 1.6rem;
+    text-align: center;
+  }
     }
 
     @media print {
@@ -112,18 +144,23 @@
     img {
       max-width: 140px !important;
     }
+    .titulo-repertorio {
+    font-size: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    color: #000 !important;
+  }
     }
   </style>
 
 </head>
 
 <body>
-  <div style="position: absolute; top: 20px; right: 20px;">
-    <img src="logo-unidos-em-cristo.png" alt="Logo Unidos em Cristo"
-         style="max-width: 140px;" />
+  <div class="cabecalho-repertorio">
+    <h1 class="titulo-repertorio">Repertório - Ministério Unidos em Cristo</h1>
+    <img src="logo-unidos-em-cristo.png" alt="Logo Unidos em Cristo" class="logo-repertorio" />
   </div>
-  
-  <h1>REPERTÓRIO - MINISTÉRIO DE MÚSICA UNIDOS EM CRISTO</h1>
+
   <a class="exportar" href="/exportar-pdf" target="_blank">📄 Exportar PDF</a>
   <div class="sumario" id="sumario">
     <h2>Sumário</h2>
@@ -458,7 +495,6 @@ Te entregar meu Coração, suplicar o teu perdão
       </pre>
       <pre class="letra">
 [Primeira Parte]
-
 C9     G4              Am7         F9
 Aviva o meu coração cansado de esperar
                     C9   G4(riff)        Am7    F9
@@ -470,7 +506,6 @@ Vem ouvir as trombetas de Sião
       </pre>
       <pre class="letra">
 [Refrão]
-
     Am7(9)  G4                     F9
 Proclama         que Jesus voltando está
                     Am7(9)     G4
@@ -490,7 +525,6 @@ E hoje nessa geração te escolhi és meu! (2x)
       </pre>
       <pre class="letra">
 [Refrão]
-
     Am7(9)  G4                     F9
 Proclama         que Jesus voltando está
                     Am7(9)     G4
@@ -500,7 +534,6 @@ Que o cordeiro é o Leão que no trono está (2x)
       </pre>
 <pre class="letra">
 [Terceira Parte]
-
   C9        G4            Am7(9)       F9
 Vou avivar o teu coração, Cansado de esperar
     C9              G4
