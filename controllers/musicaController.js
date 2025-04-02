@@ -10,7 +10,7 @@ export const salvarMusica = async (req, res) => {
                 letra,
                 tom,
                 capotraste,
-                categoria: categoria.toUpper(),
+                categoria: categoria.toUpperCase(),
                 dataEnvio: new Date()
             },
             { upsert: true, new: true, setDefaultsOnInsert: true }
