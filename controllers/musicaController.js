@@ -2,12 +2,24 @@ import Musica from '../models/musicas.js';
 
 export const salvarMusica = async (req, res) => {
     try {
-        const musica = new Musica(req.body);
-        await musica.save();
-        res.status(201).json({ message: 'Cifra salva com sucesso' });
+        const { titulo, letra, tom, capotraste } = req.body;
+
+        const result = await Musica.findOneAndUpdate(
+            { titulo: titulo },
+            {
+                letra,
+                tom,
+                capotraste,
+                dataEnvio: new Date()
+            },
+            { upsert: true, new: true, setDefaultsOnInsert: true }
+        );
+
+        res.status(201).json({ message: 'Cifra salva ou atualizada com sucesso', musica: result });
+
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Erro ao salvar cifra' });
+        res.status(500).json({ error: 'Erro ao salvar ou atualizar cifra' });
     }
 };
 

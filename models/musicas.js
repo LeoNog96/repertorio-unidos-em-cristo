@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const musicaSchema = new mongoose.Schema({
-    titulo: String,
+    titulo: { type: String, unique: true }, // índice único
     letra: String,
     tom: String,
     categoria: String,
