@@ -2,7 +2,7 @@ import Musica from '../models/musicas.js';
 
 export const salvarMusica = async (req, res) => {
     try {
-        const { titulo, letra, tom, capotraste } = req.body;
+        const { titulo, letra, tom, capotraste, categoria } = req.body;
 
         const result = await Musica.findOneAndUpdate(
             { titulo: titulo },
@@ -10,6 +10,7 @@ export const salvarMusica = async (req, res) => {
                 letra,
                 tom,
                 capotraste,
+                categoria: categoria.toUpper(),
                 dataEnvio: new Date()
             },
             { upsert: true, new: true, setDefaultsOnInsert: true }
