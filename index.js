@@ -1,58 +1,41 @@
+import dotenv from 'dotenv';
+import express from 'express';
+import mongoose from 'mongoose';
+import path from 'path';
+import fs from 'fs';
+import musicaRoutes from './routes/musicaRoutes.js';
+import { gerarPDF } from './services/pdfService.js';
+import cors from 'cors';
 
-const express = require('express');
-const path = require('path');
-const puppeteer = require('puppeteer');
+dotenv.config();
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+app.use(cors());
+app.use(express.json());
+app.use(express.static(path.join(process.cwd(), 'public')));
 
-// Servir arquivos estáticos (HTML)
-app.use(express.static(path.join(__dirname, 'public')));
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('🟢 MongoDB conectado'))
+    .catch(err => console.error('🔴 Erro ao conectar no MongoDB', err));
 
-const fs = require('fs');
+app.use('/api/musicas', musicaRoutes);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'repertorio-completo.html'));
-  });
+    res.sendFile(path.join(process.cwd(), 'public', 'repertorio-completo.html'));
+});
 
 app.get('/exportar-pdf', async (req, res) => {
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
-
-  const page = await browser.newPage();
-  const targetUrl = `https://repertorio-unidos-em-cristo.onrender.com/repertorio-completo.html`;
-
-  await page.goto(targetUrl, { waitUntil: 'networkidle0' });
-  await page.emulateMediaType('print');
-  await page.waitForSelector('.musica', { visible: true });
-
-  await page.setViewport({ width: 1280, height: 1800 });
-
-  const filePath = path.join(__dirname, 'repertorio-final.pdf');
-
-  await page.pdf({
-    path: filePath, // Salva em disco
-    format: 'A4',
-    printBackground: true,
-    preferCSSPageSize: true,
-    margin: { top: '40px', bottom: '40px', left: '30px', right: '30px' }
-  });
-
-  await browser.close();
-
-  res.download(filePath, 'repertorio.pdf', (err) => {
-    if (err) {
-      console.error('Erro ao enviar PDF:', err);
-    } else {
-      fs.unlink(filePath, (err) => {
-        if (err) console.error('Erro ao apagar o PDF:', err);
-        else console.log('PDF apagado com sucesso!');
-      });
+    try {
+        const filePath = await gerarPDF();
+        res.download(filePath, 'repertorio.pdf', (err) => {
+            if (!err) fs.unlinkSync(filePath);
+        });
+    } catch (error) {
+        console.error('Erro ao gerar PDF', error);
+        res.status(500).send('Erro ao gerar PDF');
     }
-  });
 });
 
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+    console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
 });
