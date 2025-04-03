@@ -1,30 +1,30 @@
 import puppeteer from 'puppeteer';
-import path from 'path';
-import fs from 'fs';
 
-export async function gerarPDF() {
+/**
+ * Gera um PDF a partir de um conteúdo HTML
+ * @param {string} html - conteúdo HTML completo
+ * @param {string} outputPath - caminho onde o PDF será salvo
+ */
+export async function gerarPDF(html, outputPath) {
     const browser = await puppeteer.launch({
-        headless: 'new',
+        headless: 'new', // recomendado para puppeteer >= v19
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
     const page = await browser.newPage();
-    const targetUrl = `http://localhost:3000/repertorio-completo.html`;
-
-    await page.goto(targetUrl, { waitUntil: 'networkidle0' });
-    await page.emulateMediaType('print');
-    await page.waitForSelector('.musica', { visible: true });
-
-    const filePath = path.join(process.cwd(), 'repertorio-final.pdf');
+    await page.setContent(html, { waitUntil: 'networkidle0' });
 
     await page.pdf({
-        path: filePath,
+        path: outputPath,
         format: 'A4',
         printBackground: true,
-        preferCSSPageSize: true,
-        margin: { top: '40px', bottom: '40px', left: '30px', right: '30px' }
+        margin: {
+            top: '20mm',
+            bottom: '20mm',
+            left: '15mm',
+            right: '15mm'
+        }
     });
 
     await browser.close();
-    return filePath;
 }

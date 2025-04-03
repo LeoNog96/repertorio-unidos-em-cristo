@@ -1,10 +1,13 @@
 import Musica from '../models/musicas.js';
+import Repertorio from '../models/Repertorio.js';
 
 export const salvarMusica = async (req, res) => {
     try {
         const { titulo, letra, tom, capotraste, categoria } = req.body;
+        const repertorioId = '67eead00e7e6d86890b94205';
 
-        const result = await Musica.findOneAndUpdate(
+        // 1 - Upsert da música
+        const musica = await Musica.findOneAndUpdate(
             { titulo: titulo },
             {
                 letra,
@@ -16,7 +19,19 @@ export const salvarMusica = async (req, res) => {
             { upsert: true, new: true, setDefaultsOnInsert: true }
         );
 
-        res.status(201).json({ message: 'Cifra salva ou atualizada com sucesso', musica: result });
+        // 2 - Buscar o repertório
+        const repertorio = await Repertorio.findById(repertorioId);
+        if (!repertorio) return res.status(404).json({ error: 'Repertório não encontrado' });
+
+        // 3 - Verifica se a música já está no repertório
+        const jaExiste = repertorio.musicas.some(m => m.equals(musica._id));
+
+        if (!jaExiste) {
+            repertorio.musicas.push(musica._id);
+            await repertorio.save();
+        }
+
+        res.status(201).json({ message: 'Cifra salva/atualizada e repertório sincronizado', musica });
 
     } catch (error) {
         console.error(error);
